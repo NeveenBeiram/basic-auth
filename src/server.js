@@ -11,9 +11,12 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 
+//form
+const multer = require('multer');
+const multerParse = multer();
+
+app.use(multerParse.none());
 app.use ('/api/v1/', routes);
-
-
 
 
 const notFoundHandler = require('./middleware/404');
